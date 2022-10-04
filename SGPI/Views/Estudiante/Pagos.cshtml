@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewData["Title"] = "Pagos";
+}
+<div class="Container">
+    <br>
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
+        <b>
+            <ul class="navbar-nav navbar-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="/Estudiante/Actualizar">ACTUALIZAR</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Estudiante/Pagos">PAGOS</a>
+                </li>
+            </ul>
+        </b>
+    </nav>
+    <br>
+    <div style="text-align:right">
+        <a href="/Administrador/Login" id="regresar">Cerrar sesion</a>
+    </div>
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Valor Pago</th>
+                <th scope="col">Fecha Pago</th>
+                <th scope="col">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>$ 2.000.000</td>
+                <td><input type="date" class="form-control col-sm-1" style="width : 140px; heigth : 5px" id="timectxt" required /></td>
+                <td><a href="https://www.proturbiomarspa.com/files/_pdf-prueba.pdf" target="_blank" id="pdf">Pago1.pdf</a></td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td><input type="number" placeholder="2.000.000" class="form-control col-sm-1" style="width : 180px; heigth : 5px" id="numdoctxt" required /></td>
+                <td><input type="number" placeholder="13/09/2022" class="form-control col-sm-1" style="width : 130px; heigth : 5px" id="numdoctxt" required /></td>
+                <td><input type="file" placeholder="pago2.pdf" class="form-control col-sm-1" style="width : 400px; heigth : 5px" id="numdoctxt" required /></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

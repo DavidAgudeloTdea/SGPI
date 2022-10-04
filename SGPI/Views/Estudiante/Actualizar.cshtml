@@ -1,0 +1,116 @@
+﻿
+@{
+    ViewData["Title"] = "Actualizar";
+}
+<div class="container">
+    <br>
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
+        <b>
+            <ul class="navbar-nav navbar-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="/Estudiante/Actualizar">ACTUALIZAR</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Estudiante/Pagos">PAGOS</a>
+                </li>
+            </ul>
+        </b>
+    </nav>
+    <br>
+    <div style="text-align:right">
+        <a href="/Administrador/Login" id="regresar">Cerrar sesion</a>
+    </div>
+
+    <div class="tab-content">
+        <form>
+            <br>
+            <div class="container tab-pane active">
+                <fm action="/action_page.php">
+                    <div class="container-fluid cew-9">
+                        <div class="row">
+                            <div class="col">
+                                <b><label for="tipo">Tipo de Documento</label></b>
+                                <br>
+                                <select name="tipodocumento" id="Tipodocumento">
+                                    <option value="cedula">Cedula de Ciudadania</option>
+                                    <option value="tarjeta">Tarjeta de Identidad</option>
+                                    <option value="nit">NIT</option>
+                                    <option value="pasaporte">Pasaporte</option>
+                                </select>
+                                <br>
+                                <br>
+                                <br>
+                                <b><label for="programa">Programa</label></b>
+                                <br>
+                                <select name="programa" id="programa">
+                                    <option value="ingenieria">Ingenieria de Software</option>
+                                    <option value="maestria">Maestria en Gestion TI</option>
+                                    <option value="si">Especializacion SI</option>
+                                    <option value="medioambiente">Maestria en Medio Ambiente</option>
+                                </select>
+                                <br>
+                            </div>
+                            <div class="col">    
+                                <b><label for="genero">Genero</label></b>
+                                <br>
+                                <select name="genero" id="genero">
+                                    <option value="masculino">Masculino</option>
+                                    <option value="femenino">Femenino</option>
+                                    <option value="nobinario">No binario</option>
+                                    <option value="raro">Raro</option>
+                                    <option value="animal">Animal</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                                <br>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <b><label for="numdoctxt">Numero de Documento: </label></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <b><label for="correoelectxt">Correo Electronico</label></b>
+                    <div class="input-group">
+                        <input type="number" placeholder="1.365.345.345" class="form-control col-sm-1" style="width : 5px; heigth : 5px" id="numdoctxt" required />
+                        &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="email" placeholder="david.agudelo@correo.tdea.edu.co" class="form-control col-sm-1" style="width : 5px; heigth : 1px" id="correoelectxt" required />
+                    </div>
+                    <br>
+                    <br>
+                    <b><label for="primernametxt">Primer Nombre</label></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <b><label for="segundonamectxt">Segundo Nombre</label></b>
+                    <div class="input-group">
+                        <br>
+                        <input type="text" placeholder="David" class="form-control col-sm-1" style="width : 5px; heigth : 1px" id="primernombtxt" required />
+                        &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="text" placeholder="Pepito" class="form-control col-sm-1" style="width : 5x; heigth : 1px" id="segundonamectxt" required />
+                        <br>
+                        <br>
+                    </div>
+                    <br>
+                    <br>
+                    <b><label for="primerlastnametxt">Primer Apellido</label></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <b><label for="segundolastnametxt">Segundo Apellido</label></b>
+                    <div class="input-group">
+                        <br>
+                        <input type="text" placeholder="Agudelo" class="form-control col-sm-1" style="width : 5px; heigth : 1px" id="primerlastnametxt" required />
+                        &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="text" placeholder="Ardila" class="form-control col-sm-1" style="width : 5px; heigth : 1px" id="segundolastnametxt" required />
+                        <br>
+                        <br>
+                    </div>
+                    <br>
+                    <br>
+                    <b><label for="certificadotxt">Enviar Certificado</label></b>
+                    <br>
+                    <br>
+                    <input type="file" placeholder="Agudelo" class="form-control col-sm-1" style="width : 400px; heigth : 1px" id="primerlastnametxt" required />
+                    <br>
+                    <br>
+                    <br>
+                    <center><input type="button" class="btn btn-outline-primary" value="MODIFICAR USUARIO"></center>
+            </div>
+        </form>
+    </div>
+</div>

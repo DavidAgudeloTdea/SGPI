@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewData["Title"] = "CooReportes";
+}
+<div class="Container">
+    <br>
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
+        <b>
+            <ul class="navbar-nav navbar-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="/Coordinador/BuscarCoordinador">BUSCAR</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Coordinador/ProgramarAsignacion">PROGRAMAR ASIGNACION</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Coordinador/Homologacion">HOMOLOGACION</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Coordinador/Entrevistas">ENTREVISTAS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Coordinador/CooReportes">REPORTES</a>
+                </li>
+            </ul>
+        </b>
+    </nav>
+    <br>
+    <div class="row">
+        <div class="col">
+            <b><label for="tipo">Tipo de Documento</label></b>
+            <br>
+            <select name="tipodocumento" id="Tipodocumento">
+                <option value="cedula">Cedula de Ciudadania</option>
+                <option value="tarjeta">Tarjeta de Identidad</option>
+                <option value="nit">NIT</option>
+                <option value="pasaporte">Pasaporte</option>
+            </select>
+        </div>
+        <div class="col">
+            <b><label for="numerodeDoctxt">Numero de Documento</label></b>
+            <div class="form-group">
+                <input type="number" placeholder="1.364.567.456" class="form-control col-sm-1" style="width : 300px; heigth : 5px" id="numerodeDoctxt" required />
+            </div>
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+    </div>
+    <br>
+    <br>
+    <table class="table">
+        <thead>
+            <tr class="text-center">
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Primer Apellido</th>
+                <th scope="col">Segundo Apellido</th>
+                <th scope="col">Genero</th>
+                <th scope="col">Documento</th>
+                <th scope="col">Programa</th>
+                <th scope="col">Rol</th>
+                <th scope="col">Correo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="text-center">
+                <th scope="row">1</th>
+                <td>David</td>
+                <td>Agudelo</td>
+                <td>Ardila</td>
+                <td>Masculino</td>
+                <td>1.365.345.345</td>
+                <td>Ingenieria de Software</td>
+                <td>Estudiante</td>
+                <td>david.agudelo@correo.tdea.edu.co</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+    <center><input type="button" class="btn btn-outline-primary" value="GENERAR"></center>
+</div>
+
+
