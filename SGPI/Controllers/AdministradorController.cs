@@ -6,7 +6,7 @@ namespace SGPI.Controllers
     {
         SGPI_BDContext context = new SGPI_BDContext();
         public IActionResult Login()
-        {
+        {/*
             // Create
             TblUsuario usr = new TblUsuario();
             usr.PrimerNombre = "Mauricio";
@@ -23,7 +23,14 @@ namespace SGPI.Controllers
 
             context.Add(usr);
             context.SaveChanges();
+            */
             // Query
+            TblUsuario usuario = new TblUsuario();
+            usuario = context.TblUsuarios
+                .Single(b => b.NumeroDocumento == "123456789");
+
+            List<TblUsuario> usuarios = new List<TblUsuario>();
+            usuarios = context.TblUsuarios.ToList();
 
             // Update
 
