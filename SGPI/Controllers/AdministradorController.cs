@@ -23,7 +23,7 @@ namespace SGPI.Controllers
 
             context.Add(usr);
             context.SaveChanges();
-            */
+            
             // Query
             TblUsuario usuario = new TblUsuario();
             usuario = context.TblUsuarios
@@ -31,10 +31,56 @@ namespace SGPI.Controllers
 
             List<TblUsuario> usuarios = new List<TblUsuario>();
             usuarios = context.TblUsuarios.ToList();
-
+            
             // Update
+            var usr = context.TblUsuarios
+                .Where(cursor => cursor.Idusuario == 1)
+                .FirstOrDefault();
 
+            if(usr != null)
+            {
+                usr.SegundoNombre = "Diego";
+                usr.SegundoApellido = "Camacho";
+
+                context.TblUsuarios.Update(usr);
+                context.SaveChanges();
+            }
+            
+
+            */
             // Delete
+            var usuarioEliminar = context.TblUsuarios
+                .Where(cursor => cursor.Idusuario == 1)
+                .FirstOrDefault();
+            context.TblUsuarios.Remove(usuarioEliminar);
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Login(TblUsuario user)
+        {
+            string numeroDoc = user.NumeroDocumento;
+            string pass = user.VcPassword;
+
+            var usuarioLogin = context.TblUsuarios
+                .Where(consulta => consulta.NumeroDocumento == numeroDoc &&
+                consulta.VcPassword == pass).FirstOrDefault();
+
+            if (usuarioLogin !=null)
+            {
+                // Administrador
+                if(usuarioLogin.Idrol == 1) { }
+                // Coordinador
+                else if(usuarioLogin.Idrol == 2) { }
+                // Estudiante
+                else if(usuarioLogin.Idrol == 3) { }
+                // No existe este rol
+                else { }
+            }
+            else{
+                return ViewBag.mensaje = "Usuario no existe" +
+                    "o usuario y/o contraseña invalidad";
+            }
             return View();
         }
 
