@@ -1,6 +1,11 @@
-﻿
+﻿@model SGPI.Models.TblUsuario
 @{
     ViewData["Title"] = "CrearUsuario";
+    Layout = "_LayoutSGPI";
+}
+@if (ViewBag.mensaje != null)
+{
+    <h1>@ViewBag.mensaje</h1>
 }
 <div class="container">
         <br>
@@ -30,7 +35,7 @@
         <a href="/Administrador/Login" id="regresar">Cerrar sesion</a>
     </div>
     <div class="tab-content">
-        <form>
+        <form method="post">
             <br>
         <div class="container tab-pane active">
             <fm action="/action_page.php">
@@ -71,6 +76,8 @@
                                 <br>
                                 <b><label for="genero">Genero</label></b>
                                     <br>
+                                    @Html.DropDownList("Idgenero", new SelectList(ViewBag.tblGenero, "Idgenero","Genero"), new{@class="form-control dropdown"});
+                                    @*
                                  <select name="genero" id="genero">
                                     <option value="masculino">Masculino</option>
                                     <option value="femenino">Femenino</option>
@@ -78,7 +85,7 @@
                                     <option value="raro">Raro</option>
                                     <option value="animal">Animal</option>
                                     <option value="otro">Otro</option>
-                                </select>
+                                </select> *@
                                     <br>
                                     <br>
                                 <br>
@@ -90,9 +97,9 @@
                     <b><label for="numdoctxt">Numero de Documento: </label></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <b><label for="correoelectxt">Correo Electronico</label></b>
                 <div class="input-group">
-                    <input type="number" placeholder="#" class="form-control col-sm-1" style="width : 5px; heigth : 5px" id="numdoctxt" required />
+                    <input asp-for="NumeroDocumento" type="number" placeholder="#" class="form-control col-sm-1" style="width : 5px; heigth : 5px" id="numdoctxt" required />
                         &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="email" placeholder="Ingrese correo" class="form-control col-sm-1" style="width : 5px; heigth : 1px" id="correoelectxt" required />
+                    <input asp-for="Email" type="email" placeholder="Ingrese correo" class="form-control col-sm-1" style="width : 5px; heigth : 1px" id="correoelectxt" required />
                 </div>
                     <br>
                     <br>
@@ -100,9 +107,9 @@
                     <b><label for="segundonamectxt">Segundo Nombre</label></b>
                 <div class="input-group">
                         <br>
-                    <input type="text" placeholder="Ingrese primer nombre" class="form-control col-sm-1" style="width : 5px; heigth : 1px" id="primernombtxt" required />
+                    <input asp-for="PrimerNombre" type="text" placeholder="Ingrese primer nombre" class="form-control col-sm-1" style="width : 5px; heigth : 1px" id="primernombtxt" required />
                         &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" placeholder="Ingrese segundo nombre" class="form-control col-sm-1" style="width : 5x; heigth : 1px" id="segundonamectxt" required />
+                    <input asp-for="SegundoNombre" type="text" placeholder="Ingrese segundo nombre" class="form-control col-sm-1" style="width : 5x; heigth : 1px" id="segundonamectxt" required />
                         <br>
                         <br>
                 </div>
@@ -112,9 +119,9 @@
                     <b><label for="segundolastnametxt">Segundo Apellido</label></b>
                 <div class="input-group">    
                         <br>
-                    <input type="text" placeholder="Ingrese primer apellido" class="form-control col-sm-1" style="width : 5px; heigth : 1px" id="primerlastnametxt" required />
+                    <input asp-for="PrimerApellido" type="text" placeholder="Ingrese primer apellido" class="form-control col-sm-1" style="width : 5px; heigth : 1px" id="primerlastnametxt" required />
                         &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" placeholder="Ingrese segundo apellido" class="form-control col-sm-1" style="width : 5px; heigth : 1px" id="segundolastnametxt" required />
+                    <input asp-for="SegundoApellido" type="text" placeholder="Ingrese segundo apellido" class="form-control col-sm-1" style="width : 5px; heigth : 1px" id="segundolastnametxt" required />
                         <br>
                         <br>
                 </div>

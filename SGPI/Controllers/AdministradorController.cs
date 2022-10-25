@@ -69,11 +69,18 @@ namespace SGPI.Controllers
             if (usuarioLogin !=null)
             {
                 // Administrador
-                if(usuarioLogin.Idrol == 1) { }
+                if(usuarioLogin.Idrol == 1) {
+                    CrearUsuario();
+                    return View("CrearUsuario");
+                }
                 // Coordinador
-                else if(usuarioLogin.Idrol == 2) { }
+                else if(usuarioLogin.Idrol == 2) {
+                    return Redirect("Coordinador/BuscarCoordinador");
+                }
                 // Estudiante
-                else if(usuarioLogin.Idrol == 3) { }
+                else if(usuarioLogin.Idrol == 3) {
+                    return Redirect("Estudiante/Actualizar");
+                }
                 // No existe este rol
                 else { }
             }
@@ -90,6 +97,7 @@ namespace SGPI.Controllers
         }
         public IActionResult CrearUsuario()
         {
+            ViewBag.TblGenero = context.TblGeneros.ToList();
             return View();
         }
 
