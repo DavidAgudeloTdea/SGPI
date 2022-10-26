@@ -47,12 +47,13 @@ namespace SGPI.Controllers
             }
             
 
-            */
+            
             // Delete
             var usuarioEliminar = context.TblUsuarios
                 .Where(cursor => cursor.Idusuario == 1)
                 .FirstOrDefault();
             context.TblUsuarios.Remove(usuarioEliminar);
+            */
             return View();
         }
 
@@ -62,8 +63,7 @@ namespace SGPI.Controllers
             string numeroDoc = user.NumeroDocumento;
             string pass = user.VcPassword;
 
-            var usuarioLogin = context.TblUsuarios
-                .Where(consulta => consulta.NumeroDocumento == numeroDoc &&
+            var usuarioLogin = context.TblUsuarios.Where(consulta => consulta.NumeroDocumento == numeroDoc &&
                 consulta.VcPassword == pass).FirstOrDefault();
 
             if (usuarioLogin !=null)
@@ -75,14 +75,16 @@ namespace SGPI.Controllers
                 }
                 // Coordinador
                 else if(usuarioLogin.Idrol == 2) {
-                    return Redirect("Coordinador/BuscarCoordinador");
+                    CoordinadorController coordi = new CoordinadorController();
+                    coordi.BuscarCoordinador();
+                    return Redirect("Views/Coordinador/BuscarCoordinador");
                 }
                 // Estudiante
                 else if(usuarioLogin.Idrol == 3) {
-                    return Redirect("Estudiante/Actualizar");
+                    EstudianteController estudi = new EstudianteController();
+                    estudi.Actualizar();
+                    return Redirect("Views/Estudiante/Actualizar");
                 }
-                // No existe este rol
-                else { }
             }
             else{
                 return ViewBag.mensaje = "Usuario no existe" +
@@ -98,6 +100,7 @@ namespace SGPI.Controllers
         public IActionResult CrearUsuario()
         {
             ViewBag.TblGenero = context.TblGeneros.ToList();
+            ViewBag.TblRol = context.TblRols.ToList();
             return View();
         }
 
@@ -117,47 +120,6 @@ namespace SGPI.Controllers
         }
 
         public IActionResult Reportes()
-        {
-            return View();
-        }
-    }
-
-    public class CoordinadorController : Controller
-    {
-        public IActionResult BuscarCoordinador()
-        {
-            return View();
-        }
-
-        public IActionResult ProgramarAsignacion()
-        {
-            return View();
-        }
-
-        public IActionResult Homologacion()
-        {
-            return View();
-        }
-
-        public IActionResult Entrevistas()
-        {
-            return View();
-        }
-
-        public IActionResult CooReportes()
-        {
-            return View();
-        }
-    }
-
-    public class EstudianteController : Controller
-    {
-        public IActionResult Actualizar()
-        {
-            return View();
-        }
-
-        public IActionResult Pagos()
         {
             return View();
         }
