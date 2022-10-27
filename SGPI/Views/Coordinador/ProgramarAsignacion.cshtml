@@ -1,8 +1,9 @@
 ﻿
 @{
     ViewData["Title"] = "ProgramarAsignacion";
+    Layout = "_LayoutSGPI";
 }
-<div class="Container">
+<div class="container">
     <br>
     <nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
         <b>
@@ -34,7 +35,7 @@
             <div class="col">
                 <b><label for="periodoacademicoCtxt">Periodo Academico</label></b>
                 <div class="form-group">
-                    <input type="number" placeholder="2023-1" class="form-control col-sm-1" style="width : 300px; heigth : 5px" id="reportartxt" required />
+                    <input type="number" placeholder="2023-1" style="width : 300px; heigth : 5px" id="reportartxt" required />
                 </div>
             </div>
             <div class="col">
@@ -62,10 +63,10 @@
             </thead>
             <tbody>
                 <tr class="text-center">
-                    <td><input type="date" class="form-control col-sm-1" style="width : 140px; heigth : 5px" id="fechatxt" required /></td>
-                    <td><input type="number" placeholder="5-210" class="form-control col-sm-1" style="width : 80px; heigth : 5px" id="numdoctxt" required /></td>
-                    <td><input type="text" placeholder="Construccion de Software" class="form-control col-sm-1" style="width : 220px; heigth : 5px" id="numdoctxt" required /></td>
-                    <td><input type="number" placeholder="3456789" class="form-control col-sm-1" style="width : 120px; heigth : 5px" id="numdoctxt" required /></td>
+                    <td><input type="date" style="width : 140px; heigth : 5px" id="fechatxt" required /></td>
+                    <td><input type="number" placeholder="5-210" col-sm-1" style="width : 80px; heigth : 5px" id="numdoctxt" required /></td>
+                    <td><input type="text" placeholder="Construccion de Software" col-sm-1" style="width : 220px; heigth : 5px" id="numdoctxt" required /></td>
+                    <td><input type="number" placeholder="3456789" style="width : 120px; heigth : 5px" id="numdoctxt" required /></td>
                     <td><input type="button" class="btn btn-outline-primary" value="BUSCAR"></td>
                 </tr>
                 

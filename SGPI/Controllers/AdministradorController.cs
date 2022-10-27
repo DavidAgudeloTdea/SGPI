@@ -77,18 +77,18 @@ namespace SGPI.Controllers
                 else if(usuarioLogin.Idrol == 2) {
                     CoordinadorController coordi = new CoordinadorController();
                     coordi.BuscarCoordinador();
-                    return Redirect("Views/Coordinador/BuscarCoordinador");
+                    return Redirect("/Coordinador/BuscarCoordinador");
                 }
                 // Estudiante
                 else if(usuarioLogin.Idrol == 3) {
                     EstudianteController estudi = new EstudianteController();
                     estudi.Actualizar();
-                    return Redirect("Views/Estudiante/Actualizar");
+                    return Redirect("/Estudiante/Actualizar");
                 }
             }
             else{
-                return ViewBag.mensaje = "Usuario no existe" +
-                    "o usuario y/o contraseña invalidad";
+                ViewBag.mensaje = "Usuario no existe" +
+                    "o usuario y/o contraseña invalido";
             }
             return View();
         }
@@ -99,8 +99,10 @@ namespace SGPI.Controllers
         }
         public IActionResult CrearUsuario()
         {
+            ViewBag.TblPrograma = context.TblProgramas.ToList();
             ViewBag.TblGenero = context.TblGeneros.ToList();
             ViewBag.TblRol = context.TblRols.ToList();
+            ViewBag.TblTipoDocumento = context.TblTipoDocumentos.ToList();
             return View();
         }
 
@@ -116,6 +118,10 @@ namespace SGPI.Controllers
 
         public IActionResult ModificarUsuario()
         {
+            ViewBag.TblPrograma = context.TblProgramas.ToList();
+            ViewBag.TblTipoDocumento = context.TblTipoDocumentos.ToList();
+            ViewBag.TblGenero = context.TblGeneros.ToList();
+            ViewBag.TblRol = context.TblRols.ToList();
             return View();
         }
 

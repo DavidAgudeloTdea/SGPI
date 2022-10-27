@@ -3,10 +3,7 @@
     ViewData["Title"] = "CrearUsuario";
     Layout = "_LayoutSGPI";
 }
-@if (ViewBag.mensaje != null)
-{
-    <h1>@ViewBag.mensaje</h1>
-}
+
 <div class="container">
         <br>
     <nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
@@ -44,23 +41,13 @@
                             <div class="col">
                                 <b><label for="tipo">Tipo de Documento</label></b>
                                 <br>
-                                <select name="tipodocumento" id="Tipodocumento">
-                                    <option value="cedula">Cedula de Ciudadania</option>
-                                    <option value="tarjeta">Tarjeta de Identidad</option>
-                                    <option value="nit">NIT</option>
-                                    <option value="pasaporte">Pasaporte</option>
-                                </select>
+                                    @Html.DropDownList("Iddoc", new SelectList(ViewBag.TblTipoDocumento, "Iddoc","TipoDocumento"), new{@class="form-control dropdown"})
                                 <br>
                                 <br>
                                 <br>
                                 <b><label for="programa">Programa</label></b>
-                                <br>
-                                <select name="programa" id="programa">
-                                    <option value="ingenieria">Ingenieria de Software</option>
-                                    <option value="maestria">Maestria en Gestion TI</option>
-                                    <option value="si">Especializacion SI</option>
-                                    <option value="medioambiente">Maestria en Medio Ambiente</option>
-                                </select>
+                                <br>       
+                                    @Html.DropDownList("Idprograma", new SelectList(ViewBag.TblPrograma, "Idprograma","Programa"), new{@class="form-control dropdown"})                   
                                 <br>
                             </div>
                             <div class="col">
@@ -114,7 +101,7 @@
                 </div>
                     <br>
                     <br>
-                <center><input type="button" class="btn btn-outline-primary" value="CREAR USUARIO"></center>
+                    <center><button class="btn btn-outline-primary" id="crearusuariobtn" type="submit" value="Ingresar">CREAR USUARIO</button></center>
         </div> 
         </form>
     </div>

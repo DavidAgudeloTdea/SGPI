@@ -1,8 +1,9 @@
 ﻿
 @{
     ViewData["Title"] = "CooReportes";
+    Layout = "_LayoutSGPI";
 }
-<div class="Container">
+<div class="container">
     <br>
     <nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
         <b>
@@ -26,6 +27,12 @@
         </b>
     </nav>
     <br>
+    <br>
+    <div style="text-align:right">
+        <a href="/Administrador/Login" id="regresar">Cerrar sesion</a>
+    </div>
+    <br>
+    <br>
     <div class="row">
         <div class="col">
             <b><label for="tipo">Tipo de Documento</label></b>
@@ -40,7 +47,7 @@
         <div class="col">
             <b><label for="numerodeDoctxt">Numero de Documento</label></b>
             <div class="form-group">
-                <input type="number" placeholder="1.364.567.456" class="form-control col-sm-1" style="width : 300px; heigth : 5px" id="numerodeDoctxt" required />
+                <input type="number" placeholder="1.364.567.456" style="width : 300px; heigth : 5px" id="numerodeDoctxt" required />
             </div>
         </div>
         <div class="col">
