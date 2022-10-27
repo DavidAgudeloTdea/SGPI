@@ -99,6 +99,12 @@
                         <br>
                         <br>
                 </div>
+                    @if (ViewBag.mensaje != null)
+                    {
+                        <div class="alert alert-success" role="alert">
+                            @ViewBag.mensaje
+                        </div>
+                    }
                     <br>
                     <br>
                     <center><button class="btn btn-outline-primary" id="crearusuariobtn" type="submit" value="Ingresar">CREAR USUARIO</button></center>

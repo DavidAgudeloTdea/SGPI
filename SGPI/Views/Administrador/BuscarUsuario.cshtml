@@ -35,59 +35,40 @@
             <br>
             <b><label for="busquedatxt">Buscar usuario: </label></b>
                 <div class="input-group">
-                <input asp-for="NumeroDocumento" type="text" placeholder="Busqueda" class="form-control col-sm-1" style="width : 5px; heigth : 5px" id="busquedatxt" required />
+                <input asp-for="NumeroDocumento" type="text" placeholder="Busqueda" style="width : 350px; heigth : 5px" id="busquedatxt" required /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <button class="btn btn-outline-primary" id="buscarusuariobtn" type="submit" value="Ingresar">BUSCAR USUARIO</button>
                 </div>
+            @if (Model != null)
+            {
                 <table class="table">
                     <thead>
                         <tr class="text-center">
-                            <th scope="col">#</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Primer Apellido</th>
-                            <th scope="col">Segundo Apellido</th>
-                            <th scope="col">Genero</th>
-                            <th scope="col">Documento</th>
-                            <th scope="col">Programa</th>
-                            <th scope="col">Rol</th>
-                            <th scope="col">Correo</th>
+                            <th scope="col">@Html.DisplayNameFor(Model=>Model.PrimerNombre)</th>
+                            <th scope="col">@Html.DisplayNameFor(Model=>Model.SegundoNombre)</th>
+                            <th scope="col">@Html.DisplayNameFor(Model=>Model.PrimerApellido)</th>
+                            <th scope="col">@Html.DisplayNameFor(Model=>Model.SegundoApellido)</th>
+                            <th scope="col">@Html.DisplayNameFor(Model=>Model.Idgenero)</th>
+                            <th scope="col">@Html.DisplayNameFor(Model=>Model.NumeroDocumento)</th>
+                            <th scope="col">@Html.DisplayNameFor(Model=>Model.Idprograma)</th>
+                            <th scope="col">@Html.DisplayNameFor(Model=>Model.Idrol)</th>
+                            <th scope="col">@Html.DisplayNameFor(Model=>Model.Email)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="text-center">
-                            <th scope="row">1</th>
-                            <td>David</td>
-                            <td>Agudelo</td>
-                            <td>Ardila</td>
-                            <td>Masculino</td>
-                            <td>1.365.345.345</td>
-                            <td>Ingenieria de Software</td>
-                            <td>Estudiante</td>
-                            <td>david.agudelo@correo.tdea.edu.co</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
+                            <td scope="col">@Html.DisplayFor(ModelItems=>ModelItems.PrimerNombre)</td>
+                            <td scope="col">@Html.DisplayFor(ModelItems=>ModelItems.SegundoNombre)</td>
+                            <td scope="col">@Html.DisplayFor(ModelItems=>ModelItems.PrimerApellido)</td>
+                            <td scope="col">@Html.DisplayFor(ModelItems=>ModelItems.SegundoApellido)</td>
+                            <td scope="col">@Html.DisplayFor(ModelItems=>ModelItems.Idgenero)</td>
+                            <td scope="col">@Html.DisplayFor(ModelItems=>ModelItems.NumeroDocumento)</td>
+                            <td scope="col">@Html.DisplayFor(ModelItems=>ModelItems.Idprograma)</td>
+                            <td scope="col">@Html.DisplayFor(ModelItems=>ModelItems.Idrol)</td>
+                            <td scope="col">@Html.DisplayFor(ModelItems=>ModelItems.Email)</td>
                         </tr>
                     </tbody>
                 </table>
+            }
         </form>
     </div>
 </div>

@@ -71,7 +71,7 @@ namespace SGPI.Controllers
                 // Administrador
                 if(usuarioLogin.Idrol == 1) {
                     CrearUsuario();
-                    return View("CrearUsuario");
+                    return Redirect("Administrador/CrearUsuario");
                 }
                 // Coordinador
                 else if(usuarioLogin.Idrol == 2) {
@@ -105,10 +105,37 @@ namespace SGPI.Controllers
             ViewBag.TblTipoDocumento = context.TblTipoDocumentos.ToList();
             return View();
         }
+        [HttpPost]
+        public IActionResult CrearUsuario(TblUsuario usuario)
+        {
+            context.TblUsuarios.Add(usuario);
+            context.SaveChanges();
+            ViewBag.mensaje = "Usuario creado con exito";
+            ViewBag.TblPrograma = context.TblProgramas.ToList();
+            ViewBag.TblGenero = context.TblGeneros.ToList();
+            ViewBag.TblRol = context.TblRols.ToList();
+            ViewBag.TblTipoDocumento = context.TblTipoDocumentos.ToList();
+            return View();
+        }
 
         public IActionResult BuscarUsuario()
         {
-            return View();
+            TblUsuario us = new TblUsuario();
+            return View(us);
+        }
+        [HttpPost]
+        public IActionResult BuscarUsuario(TblUsuario usuario)
+        {
+            String numeroDoc = usuario.NumeroDocumento;
+            var user = context.TblUsuarios.Where(consulta => consulta.NumeroDocumento == numeroDoc).FirstOrDefault();
+            if (user != null)
+            {
+                return View(user);
+            }
+            else
+            {
+                return View();
+            }
         }
 
         public IActionResult EliminarUsuario()
