@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Entrevistas";
     Layout = "_LayoutSGPI";
 }
@@ -30,15 +29,13 @@
     <div style="text-align:right">
         <a href="/Administrador/Login" id="regresar">Cerrar sesion</a>
     </div>
-    <br>
-    <br>
     <center>
-    <b><label for="buscarusuarioCtxt">Buscar Usuario</label></b>
-    <div class="form-group">
-        <input type="number" placeholder="1.136.345.345" style="width : 150px; heigth : 5px" id="Coobuscarusertxt" required />
+        <b><label for="buscarusuarioCtxt">Buscar Usuario</label></b>
         <br>
+        <input type="number" placeholder="1.136.345.345" style="width : 150px; heigth : 5px" id="Coobuscarusertxt" required />
+        <br><br>
         <input type="button" class="btn btn-outline-primary" value="BUSCAR">
-    </div>
+
     </center>
     <br>
     <br>
@@ -63,6 +60,10 @@
                 <div class="form-group">
                     <input type="text" placeholder="Agudelo" style="width : 150px; heigth : 5px" id="apellidotxt" required />
                 </div>
+                <br>
+                <br>
+                <input type="button" class="btn btn-outline-primary" value="INGRESAR">&nbsp;&nbsp;
+                <input type="button" class="btn btn-outline-primary" value="VOLVER">
             </div>
             <div class="col">
                 <b><label for="segundoapellidotxt">Segundo Apellido</label></b>
@@ -77,10 +78,8 @@
                 </div>
             </div>
             <center>
-                <input type="button" class="btn btn-outline-primary" value="INGRESAR">
-                <input type="button" class="btn btn-outline-primary" value="VOLVER">
             </center>
-            
+
         </div>
     </div>
 </div>

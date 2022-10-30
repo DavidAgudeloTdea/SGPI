@@ -71,7 +71,7 @@ namespace SGPI.Controllers
                 // Administrador
                 if(usuarioLogin.Idrol == 1) {
                     CrearUsuario();
-                    return Redirect("Administrador/CrearUsuario");
+                    return Redirect("/Administrador/CrearUsuario");
                 }
                 // Coordinador
                 else if(usuarioLogin.Idrol == 2) {
