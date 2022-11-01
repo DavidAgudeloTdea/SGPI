@@ -4,26 +4,26 @@
     Layout = "_LayoutSGPI";
 }
 <div class="container">
-        <br>
+    <br>
     <nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
         <b>
-        <ul class="navbar-nav navbar-center">
-            <li class="nav-item">
-                <a class="nav-link" href="/Administrador/CrearUsuario">CREAR USUARIO</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Administrador/BuscarUsuario">BUSCAR USUARIO</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Administrador/EliminarUsuario">ELIMINAR USUARIO</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Administrador/ModificarUsuario">MODIFICAR USUARIO</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Administrador/Reportes">REPORTES</a>
-            </li>
-        </ul>
+            <ul class="navbar-nav navbar-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="/Administrador/CrearUsuario">CREAR USUARIO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Administrador/BuscarUsuario">BUSCAR USUARIO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Administrador/EliminarUsuario">ELIMINAR USUARIO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Administrador/ModificarUsuario">MODIFICAR USUARIO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Administrador/Reportes">REPORTES</a>
+                </li>
+            </ul>
         </b>
     </nav>
     <br>
@@ -34,10 +34,10 @@
         <form method="post">
             <br>
             <b><label for="busquedatxt">Buscar usuario: </label></b>
-                <div class="input-group">
-                    <input asp-for="NumeroDocumento" type="text" placeholder="Busqueda" style="width : 350px; heigth : 5px" id="busquedatxt" required /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <button class="btn btn-outline-primary" id="buscarusuariobtn" type="submit" value="Ingresar">BUSCAR USUARIO</button>
-                </div>
+            <div class="input-group">
+                <input asp-for="NumeroDocumento" type="text" placeholder="Busqueda" style="width : 350px; heigth : 5px" id="busquedatxt" required /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-outline-primary" id="buscarusuariobtn" type="submit" value="Ingresar">BUSCAR USUARIO</button>
+            </div>
             <br>
             <br>
             @if (Model != null)
@@ -61,6 +61,11 @@
                             <td scope="col">@Html.DisplayFor(ModelItems=>ModelItems.SegundoApellido)</td>
                             <td scope="col">@Html.DisplayFor(ModelItems=>ModelItems.NumeroDocumento)</td>
                             <td scope="col">@Html.DisplayFor(ModelItems=>ModelItems.Email)</td>
+                            <td scope="col">@Html.ActionLink("ModificarUsuario", "ModificarUsuario", new {Idusuario=Model.Idusuario})</td>
+                            <td scope="col">
+                                @Html.ActionLink("EliminarUsuario", "EliminarUsuario", new{Idusuario=Model.Idusuario},
+                            new{onclick="return confirm('¿Estás seguro de eliminarlo?')"})
+                            </td>
                         </tr>
                     </tbody>
                 </table>

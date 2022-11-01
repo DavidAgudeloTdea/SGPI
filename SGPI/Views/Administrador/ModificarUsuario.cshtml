@@ -68,29 +68,29 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <b><label for="numdoctxt">NUMERO DE DOCUMENTO</label></b><br>
+                            <b><label asp-for="NumeroDocumento" for="numdoctxt">NUMERO DE DOCUMENTO</label></b><br>
                             <input asp-for="NumeroDocumento" type="number" placeholder="#" style="width : 350px; heigth : 5px" id="numdoctxt" required />
                             <br>
                             <br>
-                            <b><label for="numdoctxt">CORREO</label></b><br>
+                            <b><label asp-for="Email" for="numdoctxt">CORREO</label></b><br>
                             <input asp-for="Email" type="email" placeholder="Ingrese correo" style="width : 350px; heigth : 5px" id="correoelectxt" required />
                             <br>
                             <br>
-                            <b><label for="primernametxt">PRIMER NOMBRE</label></b><br>
+                            <b><label asp-for="PrimerNombre" for="primernametxt">PRIMER NOMBRE</label></b><br>
                             <input asp-for="PrimerNombre" type="text" placeholder="Ingrese primer nombre" style="width : 350px; heigth : 5px" id="primernombtxt" required />
                             <br>
                             <br>
                         </div>
                         <div class="col">
-                            <b><label for="segundonamectxt">SEGUNDO NOMBRE</label></b><br>
+                            <b><label asp-for="SegundoNombre" for="segundonamectxt">SEGUNDO NOMBRE</label></b><br>
                             <input asp-for="SegundoNombre" type="text" placeholder="Ingrese segundo nombre" style="width : 350px; heigth : 5px" id="segundonamectxt" required />
                             <br>
                             <br>
-                            <b><label for="primerlastnametxt">PRIMER APELLIDO</label></b><br>
+                            <b><label asp-for="PrimerApellido" for="primerlastnametxt">PRIMER APELLIDO</label></b><br>
                             <input asp-for="PrimerApellido" type="text" placeholder="Ingrese primer apellido" style="width : 350px; heigth : 5px" id="primerlastnametxt" required />
                             <br>
                             <br>
-                            <b><label for="segundolastnametxt">SEGUNDO APELLIDO</label></b><br>
+                            <b><label asp-for="SegundoApellido" for="segundolastnametxt">SEGUNDO APELLIDO</label></b><br>
                             <input asp-for="SegundoApellido" type="text" placeholder="Ingrese segundo apellido" style="width : 350px; heigth : 5px" id="segundolastnametxt" required />
                             <br>
                             <br>
@@ -98,7 +98,7 @@
                     </div>
                     <br>
                     <br>
-                    <center><input type="button" class="btn btn-outline-primary" value="MODIFICAR USUARIO"></center>
+                    <center><button class="btn btn-outline-primary" id="modificarusuariobtn" type="submit" value="Actualizar">MODIFICAR USUARIO</button></center>
             </div>
         </form>
     </div>
