@@ -1,4 +1,5 @@
-﻿@{
+﻿@model SGPI.Models.TblUsuario
+@{
     ViewData["Title"] = "Actualizar";
     Layout = "_LayoutSGPI";
 }
@@ -21,7 +22,7 @@
         <a href="/Administrador/Login" id="regresar">Cerrar sesion</a>
     </div>
     <div class="tab-content">
-        <form>
+        <form method="post">
             <br>
             <div class="container tab-pane active">
                 <fm action="/action_page.php">
@@ -30,36 +31,20 @@
                             <div class="col">
                                 <b><label for="tipo">Tipo de Documento</label></b>
                                 <br>
-                                <select name="tipodocumento" id="Tipodocumento">
-                                    <option value="cedula">Cedula de Ciudadania</option>
-                                    <option value="tarjeta">Tarjeta de Identidad</option>
-                                    <option value="nit">NIT</option>
-                                    <option value="pasaporte">Pasaporte</option>
-                                </select>
+                                @Html.DropDownList("Iddoc", new SelectList(ViewBag.TblTipoDocumento, "Iddoc","TipoDocumento"), new{@class="form-control dropdown"})
                                 <br>
                                 <br>
                                 <br>
                                 <b><label for="programa">Programa</label></b>
                                 <br>
-                                <select name="programa" id="programa">
-                                    <option value="ingenieria">Ingenieria de Software</option>
-                                    <option value="maestria">Maestria en Gestion TI</option>
-                                    <option value="si">Especializacion SI</option>
-                                    <option value="medioambiente">Maestria en Medio Ambiente</option>
-                                </select>
+                                @Html.DropDownList("Idprograma", new SelectList(ViewBag.TblPrograma, "Idprograma","Programa"), new{@class="form-control dropdown"})
                                 <br>
                             </div>
                             <div class="col">
+                                <br>
                                 <b><label for="genero">Genero</label></b>
                                 <br>
-                                <select name="genero" id="genero">
-                                    <option value="masculino">Masculino</option>
-                                    <option value="femenino">Femenino</option>
-                                    <option value="nobinario">No binario</option>
-                                    <option value="raro">Raro</option>
-                                    <option value="animal">Animal</option>
-                                    <option value="otro">Otro</option>
-                                </select>
+                                @Html.DropDownList("Idgenero", new SelectList(ViewBag.tblGenero, "Idgenero","Genero"), new{@class="form-control dropdown"})
                                 <br>
                                 <br>
                                 <br>
@@ -70,42 +55,42 @@
                     <br>
                     <div class="row">
                         <div class="col">
-                            <b><label for="numdoctxt">NUMERO DE DOCUMENTO</label></b><br>
-                            <input type="number" placeholder="#" style="width : 350px; heigth : 5px" id="numdoctxt" required />
+                            <b><label asp-for="NumeroDocumento" for="numdoctxt">NUMERO DE DOCUMENTO</label></b><br>
+                            <input asp-for="NumeroDocumento" type="number" placeholder="#" style="width : 350px; heigth : 5px" id="numdoctxt" required />
                             <br>
                             <br>
-                            <b><label for="numdoctxt">CORREO ELECTRONICO</label></b><br>
-                            <input type="email" placeholder="Ingrese correo" style="width : 350px; heigth : 5px" id="correoelectxt" required />
+                            <b><label asp-for="Email" for="numdoctxt">CORREO ELECTRONICO</label></b><br>
+                            <input asp-for="Email" type="email" placeholder="Ingrese correo" style="width : 350px; heigth : 5px" id="correoelectxt" required />
                             <br>
                             <br>
-                            <b><label for="primernametxt">PRIMER NOMBRE</label></b><br>
-                            <input type="text" placeholder="Ingrese primer nombre" style="width : 350px; heigth : 5px" id="primernombtxt" required />
+                            <b><label asp-for="PrimerNombre" for="primernametxt">PRIMER NOMBRE</label></b><br>
+                            <input asp-for="PrimerNombre" type="text" placeholder="Ingrese primer nombre" style="width : 350px; heigth : 5px" id="primernombtxt" required />
                             <br>
                             <br>
                         </div>
                         <div class="col">
-                            <b><label for="segundonamectxt">SEGUNDO NOMBRE</label></b><br>
-                            <input type="text" placeholder="Ingrese segundo nombre" style="width : 350px; heigth : 5px" id="segundonamectxt" required />
+                            <b><label asp-for="SegundoNombre" for="segundonamectxt">SEGUNDO NOMBRE</label></b><br>
+                            <input asp-for="SegundoNombre" type="text" placeholder="Ingrese segundo nombre" style="width : 350px; heigth : 5px" id="segundonamectxt" required />
                             <br>
                             <br>
-                            <b><label for="primerlastnametxt">PRIMER APELLIDO</label></b><br>
-                            <input type="text" placeholder="Ingrese primer apellido" style="width : 350px; heigth : 5px" id="primerlastnametxt" required />
+                            <b><label asp-for="PrimerApellido" for="primerlastnametxt">PRIMER APELLIDO</label></b><br>
+                            <input asp-for="PrimerApellido" type="text" placeholder="Ingrese primer apellido" style="width : 350px; heigth : 5px" id="primerlastnametxt" required />
                             <br>
                             <br>
-                            <b><label for="segundolastnametxt">SEGUNDO APELLIDO</label></b><br>
-                            <input type="text" placeholder="Ingrese segundo apellido" style="width : 350px; heigth : 5px" id="segundolastnametxt" required />
+                            <b><label asp-for="SegundoApellido" for="segundolastnametxt">SEGUNDO APELLIDO</label></b><br>
+                            <input asp-for="SegundoApellido" type="text" placeholder="Ingrese segundo apellido" style="width : 350px; heigth : 5px" id="segundolastnametxt" required />
                             <br>
                             <br>
                         </div>
                     </div>
                     <b><label for="certificadotxt">Enviar Certificado</label></b>
                     <br>
-                    <input type="file" placeholder="Agudelo" style="width : 400px; heigth : 1px" id="primerlastnametxt" required />
+                    <input type="file" placeholder="Agudelo" style="width : 400px; heigth : 1px" id="primerlastnametxt"/>
                     <br>
                     <br>
                     <br>
                     <center>
-                        <input type="button" class="btn btn-outline-primary" value="MODIFICAR USUARIO">
+                        <button class="btn btn-outline-primary" id="modificarestudiante" type="submit" value="Modificar">MODIFICAR</button>
                     </center>
             </div>
         </form>

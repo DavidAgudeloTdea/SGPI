@@ -85,8 +85,7 @@ namespace SGPI.Controllers
                 else if (usuarioLogin.Idrol == 3)
                 {
                     EstudianteController estudi = new EstudianteController();
-                    estudi.Actualizar();
-                    return Redirect("/Estudiante/Actualizar");
+                    return Redirect("/Estudiante/Actualizar/?Idusuario="+usuarioLogin.Idusuario);
                 }
             }
             else
