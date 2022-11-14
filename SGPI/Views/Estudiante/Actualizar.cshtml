@@ -3,26 +3,27 @@
     ViewData["Title"] = "Actualizar";
     Layout = "_LayoutSGPI";
 }
-<div class="container">
-    <br>
-    <nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
-        <b>
-            <ul class="navbar-nav navbar-center">
-                <li class="nav-item">
-                    <a class="nav-link" href="/Estudiante/Actualizar">ACTUALIZAR</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/Estudiante/Pagos">PAGOS</a>
-                </li>
-            </ul>
-        </b>
-    </nav>
-    <br>
-    <div style="text-align:right">
-        <a href="/Administrador/Login" id="regresar">Cerrar sesion</a>
-    </div>
-    <div class="tab-content">
-        <form method="post">
+<div class="tab-content">
+    <form method="post">
+        <div class="container">
+            <br>
+            <nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
+                <b>
+                    <ul class="navbar-nav navbar-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="">ACTUALIZAR</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Estudiante/Pagos">PAGOS</a>
+                        </li>
+                    </ul>
+                </b>
+            </nav>
+            <br>
+            <div style="text-align:right">
+                <a href="/Administrador/Login" id="regresar">Cerrar sesion</a>
+            </div>
+
             <br>
             <div class="container tab-pane active">
                 <fm action="/action_page.php">
@@ -31,17 +32,16 @@
                             <div class="col">
                                 <b><label for="tipo">Tipo de Documento</label></b>
                                 <br>
-                                @Html.DropDownList("Iddoc", new SelectList(ViewBag.TblTipoDocumento, "Iddoc","TipoDocumento"), new{@class="form-control dropdown"})
+                                @Html.DropDownList("Iddoc", new SelectList(ViewBag.tblTipoDocumento, "Iddoc","TipoDocumento"), new{@class="form-control dropdown"})
                                 <br>
                                 <br>
                                 <br>
                                 <b><label for="programa">Programa</label></b>
                                 <br>
-                                @Html.DropDownList("Idprograma", new SelectList(ViewBag.TblPrograma, "Idprograma","Programa"), new{@class="form-control dropdown"})
+                                @Html.DropDownList("Idprograma", new SelectList(ViewBag.tblPrograma, "Idprograma","Programa"), new{@class="form-control dropdown"})
                                 <br>
                             </div>
                             <div class="col">
-                                <br>
                                 <b><label for="genero">Genero</label></b>
                                 <br>
                                 @Html.DropDownList("Idgenero", new SelectList(ViewBag.tblGenero, "Idgenero","Genero"), new{@class="form-control dropdown"})
@@ -51,8 +51,12 @@
                             </div>
                         </div>
                     </div>
-                    <br>
-                    <br>
+                    @if (ViewBag.estudiante != null)
+                    {
+                        <div class="alert alert-success" role="alert">
+                            @ViewBag.estudiante
+                        </div>
+                    }
                     <div class="row">
                         <div class="col">
                             <b><label asp-for="NumeroDocumento" for="numdoctxt">NUMERO DE DOCUMENTO</label></b><br>
@@ -85,7 +89,7 @@
                     </div>
                     <b><label for="certificadotxt">Enviar Certificado</label></b>
                     <br>
-                    <input type="file" placeholder="Agudelo" style="width : 400px; heigth : 1px" id="primerlastnametxt"/>
+                    <input type="file" placeholder="Agudelo" style="width : 400px; heigth : 1px" id="primerlastnametxt" />
                     <br>
                     <br>
                     <br>
@@ -93,6 +97,6 @@
                         <button class="btn btn-outline-primary" id="modificarestudiante" type="submit" value="Modificar">MODIFICAR</button>
                     </center>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
 </div>

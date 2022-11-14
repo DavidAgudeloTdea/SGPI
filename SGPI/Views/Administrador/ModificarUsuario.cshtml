@@ -15,12 +15,6 @@
                     <a class="nav-link" href="/Administrador/BuscarUsuario">BUSCAR USUARIO</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Administrador/EliminarUsuario">ELIMINAR USUARIO</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/Administrador/ModificarUsuario">MODIFICAR USUARIO</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="/Administrador/Reportes">REPORTES</a>
                 </li>
             </ul>
@@ -78,6 +72,12 @@
                             <br>
                             <b><label asp-for="PrimerNombre" for="primernametxt">PRIMER NOMBRE</label></b><br>
                             <input asp-for="PrimerNombre" type="text" placeholder="Ingrese primer nombre" style="width : 350px; heigth : 5px" id="primernombtxt" required />
+                            <br>
+                            <br>
+                            <br>
+                            <b><label asp-for="VcPassword" for="contraseñatxt">CONTRASEÑA</label></b>
+                            <br>
+                            <input asp-for="VcPassword" type="password" placeholder="Ingrese la nueva contraseña" style="width : 350px;" id="contraseñatxt" required />
                             <br>
                             <br>
                         </div>

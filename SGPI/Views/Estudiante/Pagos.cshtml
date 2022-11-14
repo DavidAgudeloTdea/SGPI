@@ -1,49 +1,54 @@
-﻿
+﻿@model SGPI.Models.TblPago
 @{
     ViewData["Title"] = "Pagos";
     Layout = "_LayoutSGPI";
 }
-<div class="container">
-    <br>
-    <nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
-        <b>
-            <ul class="navbar-nav navbar-center">
-                <li class="nav-item">
-                    <a class="nav-link" href="/Estudiante/Actualizar">ACTUALIZAR</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/Estudiante/Pagos">PAGOS</a>
-                </li>
-            </ul>
-        </b>
-    </nav>
-    <br>
-    <div style="text-align:right">
-        <a href="/Administrador/Login" id="regresar">Cerrar sesion</a>
-    </div>
-    <br>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">No</th>
-                <th scope="col">Valor Pago</th>
-                <th scope="col">Fecha Pago</th>
-                <th scope="col">Opciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>$ 2.000.000</td>
-                <td><input type="date" style="width : 140px; heigth : 5px" id="timectxt" required /></td>
-                <td><a href="https://www.proturbiomarspa.com/files/_pdf-prueba.pdf" target="_blank" id="pdf">Pago1.pdf</a></td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td><input type="number" placeholder="2.000.000" style="width : 180px; heigth : 5px" id="numdoctxt" required /></td>
-                <td><input type="number" placeholder="13/09/2022" style="width : 130px; heigth : 5px" id="numdoctxt" required /></td>
-                <td><input type="file" placeholder="pago2.pdf" style="width : 400px; heigth : 5px" id="numdoctxt" required /></td>
-            </tr>
-        </tbody>
-    </table>
+<div class="tab-content">
+    <form method="post">
+        <div class="container">
+            <br>
+            <nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
+                <b>
+                    <ul class="navbar-nav navbar-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:history.back()">ACTUALIZAR</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Estudiante/Pagos">PAGOS</a>
+                        </li>
+                    </ul>
+                </b>
+            </nav>
+            <br>
+            <div style="text-align:right">
+                <a href="/Administrador/Login" id="regresar">Cerrar sesion</a>
+            </div>
+            <br>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Valor Pago</th>
+                        <th scope="col">Fecha Pago</th>
+                        <th scope="col">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input asp-for="ValorPago" type="number" style="width : 180px; heigth : 5px" id="numdoctxt" required /></td>
+                        <td><input asp-for="Fecha" type="date" style="width : 140px; heigth : 5px" id="timectxt" required /></td>
+                        <td><input type="file" placeholder="pago2.pdf" style="width : 400px; heigth : 5px" id="numdoctxt"/></td>
+                    </tr>
+                </tbody>       
+            </table>
+            @if (ViewBag.mensaje != null)
+            {
+                <div class="alert alert-success" role="alert">
+                    @ViewBag.mensaje
+                </div>
+            }
+            <center>
+                <button class="btn btn-outline-primary" id="enviarpagobtn" type="submit" value="enviarpago">ENVIAR PAGO</button>
+            </center>
+        </div>
+    </form>
 </div>
