@@ -9,12 +9,12 @@
             <br>
             <nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
                 <b>
-                    <ul class="navbar-nav navbar-center">
+                    <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="">ACTUALIZAR</a>
+                            @Html.ActionLink("Actualizar", "Actualizar", new {IdUsuario = Model.Idusuario})
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Estudiante/Pagos">PAGOS</a>
+                            @Html.ActionLink("Pagos", "Pagos", new {IdUsuario = Model.Idusuario})
                         </li>
                     </ul>
                 </b>

@@ -33,7 +33,7 @@ namespace SGPI.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=DESKTOP-43PCN37;Database=SGPI_BD;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-0R9U54R\\SQLEXPRESS;Database=SGPI_BD;Trusted_Connection=True;");
             }
         }
 

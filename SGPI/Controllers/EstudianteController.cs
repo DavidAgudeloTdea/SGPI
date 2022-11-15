@@ -42,18 +42,36 @@ namespace SGPI.Controllers
             return Redirect("/Estudiante/Actualizar/?Idusuario=" + usuarioActualizar.Idusuario);
         }
 
-        public IActionResult Pagos()
+        public IActionResult Pagos(int? Idusuario)
         {
-            ViewBag.TblPago = context.TblPagos.ToList();
+            TblUsuario usuario = new TblUsuario();
+            var usr = context.TblUsuarios.Where(consulta => consulta.Idusuario == Idusuario).FirstOrDefault();
+            ViewBag.Idusuario = usr.Idusuario;
+            
             return View();
+
         }
         [HttpPost]
-        public IActionResult Pagos(TblPago usuario)
+        public IActionResult Pagos(int? Idusuario, TblPago usuario)
         {
+
+            TblUsuario usr = context.TblUsuarios.Find(Idusuario);
+
+
             usuario.Estado = true;
             context.TblPagos.Add(usuario);
             context.SaveChanges();
             ViewBag.mensaje = "Pago enviado";
+
+            TblEstudiante est = new TblEstudiante();
+            est.Idusuario = usr.Idusuario;
+            est.Idpago = usuario.IdPagos;
+            est.Egresado = true;
+
+            context.TblEstudiantes.Add(est);
+            context.SaveChanges();
+
+
             return View();
         }
     }

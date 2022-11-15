@@ -9,12 +9,12 @@
             <br>
             <nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
                 <b>
-                    <ul class="navbar-nav navbar-center">
+                    <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="javascript:history.back()">ACTUALIZAR</a>
+                            @Html.ActionLink("Actualizar", "Actualizar", new {IdUsuario = ViewBag.Idusuario})
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Estudiante/Pagos">PAGOS</a>
+                            @Html.ActionLink("Pagos", "Pagos", new {IdUsuario = ViewBag.Idusuario})
                         </li>
                     </ul>
                 </b>
@@ -36,9 +36,9 @@
                     <tr>
                         <td><input asp-for="ValorPago" type="number" style="width : 180px; heigth : 5px" id="numdoctxt" required /></td>
                         <td><input asp-for="Fecha" type="date" style="width : 140px; heigth : 5px" id="timectxt" required /></td>
-                        <td><input type="file" placeholder="pago2.pdf" style="width : 400px; heigth : 5px" id="numdoctxt"/></td>
+                        <td><input type="file" placeholder="pago2.pdf" style="width : 400px; heigth : 5px" id="numdoctxt" /></td>
                     </tr>
-                </tbody>       
+                </tbody>
             </table>
             @if (ViewBag.mensaje != null)
             {
